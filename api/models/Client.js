@@ -8,6 +8,8 @@
 
 module.exports = {
 
+  connection: 'postgresql',
+
   attributes: {
   	
   	name: {

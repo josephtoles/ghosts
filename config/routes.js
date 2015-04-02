@@ -15,6 +15,10 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
+  '/redirect': {
+    controller: 'Auth',
+    action: 'redirect'
+  },
   'get /login': {
     view: 'login'
   },
