@@ -9,6 +9,11 @@ var passport = require('passport');
 
 module.exports = {
 
+    test_login: function(req,res){
+        console.log('hit test_login');
+        return res.send('Returning');
+    },
+
     redirect: function(req,res){
        res.redirect('/oauth/authorize?client_id=1560741564188360&response_type=code&redirect_uri=https://apps.facebook.com/ghostsj');
        return;
