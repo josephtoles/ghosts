@@ -7,7 +7,6 @@ var oauth2orize         = require('oauth2orize'),
 // Create OAuth 2.0 server
 var server = oauth2orize.createServer();
 
-/*
 server.serializeClient(function(client, done) {
   return done(null, client.id);
 });
@@ -177,7 +176,6 @@ server.exchange(oauth2orize.exchange.refreshToken(function(client, refreshToken,
     });
 }));
 
-*/
 module.exports = {
  express: {
     customMiddleware: function(app){
