@@ -15,6 +15,7 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
+  /*
   '/redirect': {
     controller: 'Auth',
     action: 'redirect'
@@ -30,6 +31,7 @@ module.exports.routes = {
     controller: 'Auth',
     action: 'logout'
   },
+  */
 
   // Resources endPoints
 
