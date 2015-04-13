@@ -7,6 +7,7 @@ var oauth2orize         = require('oauth2orize'),
 // Create OAuth 2.0 server
 var server = oauth2orize.createServer();
 
+/*
 server.serializeClient(function(client, done) {
   return done(null, client.id);
 });
@@ -176,6 +177,7 @@ server.exchange(oauth2orize.exchange.refreshToken(function(client, refreshToken,
     });
 }));
 
+*/
 module.exports = {
  express: {
     customMiddleware: function(app){
@@ -184,7 +186,7 @@ module.exports = {
       app.use(passport.initialize());
       app.use(passport.session());
 
-      /***** OAuth authorize endPoints *****/
+      //***** OAuth authorize endPoints *****
 
       app.get('/oauth/authorize',
         login.ensureLoggedIn(),
@@ -210,7 +212,7 @@ module.exports = {
         login.ensureLoggedIn(), 
         server.decision());
 
-      /***** OAuth token endPoint *****/
+      //***** OAuth token endPoint *****
 
       app.post('/oauth/token',
         trustedClientPolicy,
@@ -222,3 +224,4 @@ module.exports = {
     }
  }
 }; 
+
