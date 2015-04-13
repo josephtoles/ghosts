@@ -11,6 +11,7 @@ module.exports = {
 
     test_login: function(req,res){
         console.log('hit test_login');
+        console.log(req.user);  // doesn't work
         return res.send('Returning');
     },
 
