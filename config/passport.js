@@ -148,6 +148,37 @@ passport.use(new BearerStrategy(
        }
 
        var info = {scope: '*'}
+       User.findOne({
+         id: token.userId
+       },
+       function (err, user) {
+         User.findOne({
+           id: token.userId
+         },done(err,user,info));
+       });
+    });
+  }
+));
+/*
+passport.use(new BearerStrategy(
+  function(accessToken, done) {
+
+    AccessToken.findOne({token:accessToken}, function(err, token) {
+      if (err) { return done(err); }
+      if (!token) { return done(null, false); }
+
+      var now = moment().unix();
+      var creationDate = moment(token.createdAt).unix();
+
+      if( now - creationDate > sails.config.oauth.tokenLife ) {
+        AccessToken.destroy({ token: accessToken }, function (err) {
+          if (err) return done(err);
+         });
+         console.log('Token expired');
+         return done(null, false, { message: 'Token expired' });
+       }
+
+       var info = {scope: '*'}
        console.log('\nhit config.passport.js');
        console.log('id is '+token.userId);
        console.log('finished console.log');
@@ -162,3 +193,4 @@ passport.use(new BearerStrategy(
     });
   }
 ));
+*/
