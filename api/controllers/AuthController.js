@@ -11,7 +11,7 @@ module.exports = {
 
     test_login: function(req,res){
         console.log('hit test_login');
-        console.log(req.user);
+        console.log(req.user && req.user.email);
         console.log(req.isAuthenticated());
         // TODO Figure out how to get user here
         //console.log(req._passport.user);
