@@ -148,6 +148,9 @@ passport.use(new BearerStrategy(
        }
 
        var info = {scope: '*'}
+       console.log('\nhit config.passport.js');
+       console.log('id is '+token.userId);
+       console.log('finished console.log');
        User.findOne({
          id: token.userId
        })

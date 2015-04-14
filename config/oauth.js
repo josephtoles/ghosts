@@ -1,1 +1,1 @@
-module.exports.oauth = {'tokenLife': 4};
+module.exports.oauth = {'tokenLife': 40000};  // seconds?

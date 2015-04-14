@@ -81,6 +81,7 @@ server.exchange(oauth2orize.exchange.code(function(client, code, redirectURI, do
                                    if(err) {
                                      return done(err);
                                    } else {
+                                     console.log('tokenLife is '+sails.config.oauth.tokenLife);
                                      return done(null, accessToken.token, refreshToken.token, { 'expires_in': sails.config.oauth.tokenLife });
                                    }
                                  });
@@ -120,6 +121,7 @@ server.exchange(oauth2orize.exchange.password(function(client, username, passwor
                         if(err) {
                           return done(err);
                         } else {
+                                     console.log('tokenLife is '+sails.config.oauth.tokenLife);
                           done(null, accessToken.token, refreshToken.token, { 'expires_in': sails.config.oauth.tokenLife });
                         }
                       });
@@ -163,6 +165,7 @@ server.exchange(oauth2orize.exchange.refreshToken(function(client, refreshToken,
                           if(err) {
                             return done(err);
                           } else {
+                                     console.log('tokenLife is '+sails.config.oauth.tokenLife);
                             done(null, accessToken.token, refreshToken.token, { 'expires_in': sails.config.oauth.tokenLife });
                           }
                         });

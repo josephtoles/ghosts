@@ -10,6 +10,8 @@
 
 module.exports = function(req, res, next) {
 
+  console.log('hit isTrustedClient');
+
   var grantType = req.param('grant_type');
   if(!grantType){
     return res.send(400, 'missing grant_type parameter');

@@ -12,17 +12,22 @@ var passport = require('passport');
 
 module.exports = function(req, res, next) {
 
+    console.log('hit oauthBearer policy');
+
 	passport.authenticate(
 	    'bearer',
 	    function(err, user, info)
 	    {
 	        if ((err) || (!user))
 	        {
+                console.log('user is '+user);
+                console.log('info is '+info);
 	            res.send(401);
 	            // res.redirect('/');
 	            return;
 	        }
             delete req.query.access_token;
+            console.log('req.user ASSIGNED');
 	        req.user = user;
 	        return next();
 	    }
