@@ -11,7 +11,11 @@ module.exports = {
 
     test_login: function(req,res){
         console.log('hit test_login');
-        console.log(req.user);  // doesn't work
+        console.log(req.user);
+        console.log(req.isAuthenticated());
+        // TODO Figure out how to get user here
+        //console.log(req._passport.user);
+        //console.log(req.user);  // doesn't work
         return res.send('Returning');
     },
 
